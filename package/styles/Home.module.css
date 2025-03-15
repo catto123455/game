@@ -1,0 +1,128 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
+  color: #4682b4;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.gameContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  width: 100%;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.matched .cardInner {
+  transform: rotateY(180deg);
+  box-shadow: 0 0 10px 2px #4caf50;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cardFront {
+  background-color: #4682b4;
+  color: white;
+}
+
+.cardBack {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+  border: 2px solid #4682b4;
+}
+
+.french {
+  font-style: italic;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #4682b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.button:hover {
+  background-color: #36648b;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.gameComplete {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #4caf50;
+  font-weight: bold;
+}
